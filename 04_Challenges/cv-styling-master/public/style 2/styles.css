@@ -1,6 +1,6 @@
 /* BODY */
 body{
-    margin: 50px 300px;  
+    margin: 50px 300px; 
 }
 /* HEADER */
 header h2{
@@ -123,7 +123,7 @@ header img{
 }
 [data-skill="9"]::after{
     content: "\2605\2605\2605\2605\2605";
-    margin-left: 85px;
+    margin-left: 40px;
 }
 .skills-secondary [data-skill="5"]{
     background-color: #008080;
@@ -137,7 +137,7 @@ header img{
 }
 .skills-secondary [data-skill="5"]::after{
     content: "\2605\2605\2605";
-    margin-left: 110px;
+    margin-left: 50px;
 }
 [data-skill="7"]{
     background-color: #008080;
@@ -151,7 +151,7 @@ header img{
 }
 [data-skill="7"]::after{
     content: "\2605\2605\2605\2605";
-    margin-left: 80px;
+    margin-left: 30px;
 }
 /* EXPERIENCES */
 #experiences{
@@ -165,6 +165,7 @@ h4 span{
 .experience-details{
     text-align: right;
     margin-top: -38px;
+   
 }
 .experience-description{
     margin-top: 30px;
@@ -179,13 +180,14 @@ h4 span{
     display: none;
 }
 .experience{
-    margin-left: 50px;   
+    margin-left: 50px;  
+    width: 100%; 
 }
 #experiences h3::after {
     display: block;
       content: '';
      width: 2px;
-     height: 150px;
+     height: 180px;
      background: #9b9b9b;
      position: absolute;
      margin-left: 120px;
@@ -197,6 +199,8 @@ h4 span{
   .experience-date-separator{
     color: #008080;
   }
+
+
    /* EDUCATION */
    #education{
     margin-top: 150px;
