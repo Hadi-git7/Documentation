@@ -1,0 +1,448 @@
+/* HEADER */
+header > div{
+    display: flex;
+    background-color: #999999;
+}
+header h1,h2{
+    color: #ff0000;
+    margin-left: 200px;
+}
+header h1{
+    margin-top: 60px;
+}
+header img{
+margin-top: 20px;
+}
+/* CONTENT */
+.content{
+  margin:100px;
+}
+ h3:before{
+    content: "";
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    background-color: #ff0000;
+    display: inline-block;
+   
+}
+
+/* ABOUT */
+section#about{
+    float: left;
+    width: 50%;
+}
+#about h3{
+    border-bottom: 2px solid #dedede;
+}
+/* COMPETENCIES */
+section#competencies{
+    float: right;
+    width: 50%
+}
+#competencies h3{
+    border-bottom: 2px solid #dedede;
+}
+.skill{
+    background-color: #cccccc;
+    margin-top: 5px;
+    height: 40px;
+
+}
+.skill span{
+    color: white;
+}
+
+[data-skill="5"] span{
+    background-color: #ff0000;
+    width: 22%;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding-top: 5px ;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+[data-skill="3"] span{
+    background-color: #ff0000;
+    width: 13%;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding-top: 5px ;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+[data-skill="1"] span{
+    background-color: #ff0000;
+    width: 2%;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding-top: 5px ;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+[data-skill="9"] span{
+    background-color: #ff4b4b;
+    width: 39%;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding-top: 5px ;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+[data-skill="7"] span{
+    background-color: #ff4b4b;
+    width: 30%;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding-top: 5px ;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+.skills-secondary span{
+    background-color: #ff4b4b;
+}
+/* EXPERIENCES */
+section#experiences{
+    margin-top: 194px;
+    float: left;
+    width: 50%;
+}
+#experiences h3{
+    border-bottom: 2px solid #dedede;
+}
+.experience h4{
+    color:#ff1717
+}
+span.experience-institution{
+    font-weight: 400;
+}
+.experience-date-separator{
+    color: #ff0000;
+}
+.experience-details{
+    color: #ababab;
+}
+/* EDUCATION */
+section#education{
+    float: right;
+    width: 50%
+}
+#education h3{
+    border-bottom: 2px solid #dedede;
+}
+/* HOBBIES */
+#hobbies{
+    width: 50%;
+}
+#hobbies h3{
+    border-bottom: 2px solid #dedede;
+}
+/* CONTACT */
+#contact{
+   position: absolute;
+   top: 0;
+   right:1000px;
+   line-height: 5px;
+   margin-top: 10px;
+}
+#contact h3{
+    display: none;
+    border-bottom: 2px solid #dedede;
+}
+.contact{
+    display: flex;
+}
+
+.contact-type{
+    float: left;
+    width:50%;
+    padding: 0;
+    margin: 0;
+    height: 10px;
+    
+}
+.contact-value{
+    float: right;
+    width:50%;
+    padding: 0;
+    margin: 0
+}
+.contact .contact-type{
+    background-color: #ff0000;
+    color: white;
+    padding-right: 10px;
+}
+.contact .contact-value{
+    background-color: black;
+ 
+  
+}
+.contact-value a{
+    text-decoration: none;
+    color: #ff0000;
+} 
+
+/* MEDIA QUERIES */
+/* PHONE MEDIA QUERY */
+@media screen and (max-width:420px) {
+    /* HEADER */
+    header > div{
+        display: flex;
+        flex-direction: column;
+        background-color: #999999;
+    }
+    header h1,h2{
+        color: #ff0000;
+        margin-left: 20px;
+    }
+    header h1{
+        margin-top: 40px;
+    }
+    header img{
+    margin-top: 0px;
+    }
+    /* CONTENT */
+    .content{
+        margin:20px;
+      }
+      /* ABOUT */
+    section#about{
+    width: 100%;
+    }
+    /* COMPETENCIES */
+    section#competencies{
+    width: 100%
+    }
+    [data-skill="5"] span{
+        background-color: #ff0000;
+        width: 45%;
+        position: absolute;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding-top: 5px ;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+    [data-skill="3"] span{
+        background-color: #ff0000;
+        width: 30%;
+        position: absolute;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding-top: 5px ;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+    [data-skill="1"] span{
+        background-color: #ff0000;
+        width: 9%;
+        position: absolute;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding-top: 5px ;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+    [data-skill="9"] span{
+        background-color: #ff4b4b;
+        width: 75%;
+        position: absolute;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding-top: 5px ;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+    [data-skill="7"] span{
+        background-color: #ff4b4b;
+        width: 60%;
+        position: absolute;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding-top: 5px ;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+    .skills-secondary span{
+        background-color: #ff4b4b;
+    }
+    /* EXPERIENCES */
+    section#experiences{
+    margin-top: 0px;
+    width: 100%;
+    }
+    /* EDUCATION */
+    section#education{
+    width: 100%
+    }
+    /* HOBBIES */
+    #hobbies{
+    width: 100%;
+    }
+    /* CONTACT */
+    #contact{
+    position:relative;
+    right:0px;
+    line-height: 5px;
+
+    }
+    #contact h3{
+        display: contents;
+        
+      
+    }
+   
+    .contact-type{
+        float: left;
+        width:30%;
+        padding: 0;
+        margin: 0;
+        height: 10px;
+        
+    }
+    .contact-value{
+        float: right;
+        width:70%;
+        padding: 0;
+        margin: 0
+    }
+    .contact .contact-value{
+        background-color: white;
+        margin-left: 5px;
+      
+    }
+}
+/* IPAD SCREENS AND WIDER MEDIA QUERY */
+@media screen and (max-width:1253px) {
+    /* HEADER */
+    header > div{
+        display: flex;
+        flex-direction: column;
+        background-color: #999999;
+    }
+    header h1,h2{
+        color: #ff0000;
+        margin-left: 20px;
+    }
+    header h1{
+        margin-top: 40px;
+    }
+    header img{
+    margin-top: 0px;
+    }
+    /* CONTENT */
+    .content{
+        margin:20px;
+      }
+      /* ABOUT */
+    section#about{
+    width: 100%;
+    }
+    /* COMPETENCIES */
+    section#competencies{
+    width: 100%
+    }
+    [data-skill="5"] span{
+        background-color: #ff0000;
+        width: 45%;
+        position: absolute;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding-top: 5px ;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+    [data-skill="3"] span{
+        background-color: #ff0000;
+        width: 30%;
+        position: absolute;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding-top: 5px ;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+    [data-skill="1"] span{
+        background-color: #ff0000;
+        width: 9%;
+        position: absolute;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding-top: 5px ;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+    [data-skill="9"] span{
+        background-color: #ff4b4b;
+        width: 75%;
+        position: absolute;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding-top: 5px ;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+    [data-skill="7"] span{
+        background-color: #ff4b4b;
+        width: 60%;
+        position: absolute;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding-top: 5px ;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+    .skills-secondary span{
+        background-color: #ff4b4b;
+    }
+    /* EXPERIENCES */
+    section#experiences{
+    margin-top: 0px;
+    width: 100%;
+    }
+    /* EDUCATION */
+    section#education{
+    width: 100%
+    }
+    /* HOBBIES */
+    #hobbies{
+    width: 100%;
+    }
+    /* CONTACT */
+    #contact{
+    position:relative;
+    right:0px;
+    line-height: 5px;
+
+    }
+    #contact h3{
+        display: contents;
+      
+    }
+   
+    .contact-type{
+        float: left;
+        width:30%;
+        padding: 0;
+        margin: 0;
+        height: 10px;
+        
+    }
+    .contact-value{
+        float: right;
+        width:70%;
+        padding: 0;
+        margin: 0
+    }
+    .contact .contact-value{
+        background-color: white;
+        margin-left: 5px;
+      
+    }
+}
+
