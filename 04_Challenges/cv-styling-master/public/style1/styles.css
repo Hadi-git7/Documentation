@@ -164,6 +164,7 @@ section#education{
 .contact-type{
     float: left;
     width:50%;
+    background-color: #ff0000;
     padding: 0;
     margin: 0;
     height: 10px;
