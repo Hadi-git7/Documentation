@@ -5,10 +5,13 @@
         <meta charset="UTF-8">
     </head>
     <body>
+        <script src="Step_5.js"></script>
         <form>
             <label for="first_number">first number : </label><input type="text" id="first_number" name="first_number"/><br/>
             <label for="second_number">second number : </label><input type="text" id="second_number" name="second_number"/><br/>
-            <button  id="validate" name ="validate">validate</button>
+            <button type="button" id="validate" name ="validate" onclick="multiply();">validate</button>
         </form>
+        <p>The result is:</p><br>
+        <span id="result"></span>
     </body>
 </html>
