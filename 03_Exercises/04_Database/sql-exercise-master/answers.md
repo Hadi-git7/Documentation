@@ -37,4 +37,12 @@ WHERE Name = 'Layal'
 12.DELETE FROM students
 WHERE Name = 'Layal'
 
+13.Commit "Creating Table"
 
+14.SELECT employees.Name ,employees.Company, companies.Date
+FROM employees,companies
+WHERE  employees.Company = companies.Name
+
+15.SELECT employees.Name FROM companies, employees WHERE employees.Company = companies.Name AND companies.date < 2000; 
+
+16.SELECT companies.Name FROM companies,employees WHERE employees.Role = 'Graphic Designer' AND companies.Name = employees.Company
