@@ -46,3 +46,19 @@ WHERE  employees.Company = companies.Name
 15.SELECT employees.Name FROM companies, employees WHERE employees.Company = companies.Name AND companies.date < 2000; 
 
 16.SELECT companies.Name FROM companies,employees WHERE employees.Role = 'Graphic Designer' AND companies.Name = employees.Company
+
+17.Commit 'Joins'
+
+18.SELECT Name FROM students WHERE Points = (SELECT max(Points) FROM students)
+
+19.SELECT AVG(Points) FROM students;
+
+20.SELECT count(*) FROM students WHERE Points=500
+
+21.SELECT Name FROM students WHERE Name like '%s%';
+
+22.SELECT * FROM students ORDER BY Points desc
+
+
+23.COmmit "Count&Filter"
+
