@@ -15,3 +15,26 @@
 8.Save files
 
 9. Commit 'Basic queries'
+
+.CREATE TABLE "graduates" (
+"ID" INTEGER  NOT NULL ,
+"Name" TEXT NOT NULL UNIQUE,
+"Age" INTEGER,
+"Gender" TEXT,
+"Points" INTEGER,
+"Graduation" TEXT,
+PRIMARY KEY ("ID" AUTOINCREMENT)
+);
+
+10.INSERT INTO graduates (ID, Name, Age, Gender, Points)
+SELECT * FROM students
+WHERE Name = 'Layal';
+
+11.UPDATE graduates
+SET Graduation = '08/09/2018'
+WHERE Name = 'Layal'
+
+12.DELETE FROM students
+WHERE Name = 'Layal'
+
+
