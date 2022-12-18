@@ -5,18 +5,15 @@
     margin:0;
     display:flex;
   }
-  .Navbar p {
+  .Navbar,.search-input {
     color: white;
     font-size: 25px;
-    margin-top:45px;
-    margin-left: 20px;
-  
   }
   .Navbar button {
     width:200px;
     height:65px;
     font-size: 20px;
-    margin-left: 300px;
+    margin-left: 10px;
     margin-top: 25px;
     background-color: #5879c7;
     color:#05054b;
