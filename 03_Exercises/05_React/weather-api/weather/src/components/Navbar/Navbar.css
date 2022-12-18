@@ -1,0 +1,35 @@
+.Navbar{
+    background-color:#759eda;
+    width:100%;
+    height:120px;
+    margin:0;
+    display:flex;
+  }
+  .Navbar p {
+    color: white;
+    font-size: 25px;
+    margin-top:45px;
+    margin-left: 20px;
+  
+  }
+  .Navbar button {
+    width:200px;
+    height:65px;
+    font-size: 20px;
+    margin-left: 300px;
+    margin-top: 25px;
+    background-color: #5879c7;
+    color:#05054b;
+    border:#5879c7;
+  }
+
+  @media screen and (max-width:1422px){
+    .Navbar{
+    justify-content: space-between;
+    width:100vw;
+    }
+    .Navbar button{
+      margin-left: 0px;
+      margin-right:50px;
+    }
+  }

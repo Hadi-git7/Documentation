@@ -1,10 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import Body from './components/Body/Body.js';
 
 function App() {
   return (
     <div className="App">
-    <p>Hadi Abou Homein</p>
+   <Navbar/>
+   <Body />
     </div>
   );
 }
