@@ -14,3 +14,9 @@
 ::placeholder{
     color:white
 }
+@media screen and (max-width:1422px){
+   .search-input input{
+    width:200px;
+    font-size: 23px;
+   }
+}

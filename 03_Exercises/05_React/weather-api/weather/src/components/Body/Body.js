@@ -3,65 +3,26 @@ import './Body.css'
 import mostlycloudy from '../Body/mostlycloudy.svg'
 import clear from '../Body/clear.svg'
 import CurrentWeather from '../CurrentWeather/CurrentWeather'
+import FakeWeather from '../../data/FakeWeather.json'
 function Body() {
+ 
   return (
     <div className='body' > 
-
+    
       <CurrentWeather />
-      <div className='weather-cards'>
 
-        <div className='card'>
+      <div className='weather-cards'>
+      {FakeWeather.list.map(fake => {
+        return(
+          <div className='card'>
           <p>03:00</p>
           <img src={mostlycloudy} alt='mostly cloudy icon'/>
           <p>8°C</p>
 
         </div>
-
-        <div className='card'>
-          <p>06:00</p>
-          <img src={mostlycloudy} alt='mostly cloudy icon'/>
-          <p>9°C</p>
-
-        </div>
-
-        <div className='card'>
-          <p>09:00</p>
-          <img src={clear} alt='clear icon'/>
-          <p>14°C</p>
-
-        </div>
-
-
-        <div className='card'>
-          <p>12:00</p>
-          <img src={clear} alt='clear icon'/>
-          <p>17°C</p>
-
-        </div>
-
-
-        <div className='card'>
-          <p>15:00</p>
-          <img src={clear} alt='clear icon'/>
-          <p>18°C</p>
-
-        </div>
-
-
-        <div className='card'>
-          <p>18:00</p>
-          <img src={clear} alt='clear icon'/>
-          <p>16°C</p>
-
-        </div>
-
-
-        <div className='card'>
-          <p>21:00</p>
-          <img src={mostlycloudy} alt='mostly cloudy icon'/>
-          <p>13°C</p>
-
-        </div>
+        )
+      })}
+       
 
       </div>
 
