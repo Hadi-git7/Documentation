@@ -43,6 +43,9 @@ function onDataReceived(text) {
   else if(text === 'tomato\n'){
     tomato();
   }
+  else if(text === 'exit\n'){
+    exit();
+  }
   else{
     unknownCommand(text);
   }
@@ -80,6 +83,10 @@ function tomato(){
  * @returns {void}
  */
 function quit(){
+  console.log('Quitting now, goodbye!')
+  process.exit();
+}
+function exit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
