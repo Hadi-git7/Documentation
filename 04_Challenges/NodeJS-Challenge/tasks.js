@@ -46,6 +46,9 @@ function onDataReceived(text) {
   else if(text === 'exit\n'){
     exit();
   }
+  else if(text === 'help\n'){
+    help();
+  }
   else{
     unknownCommand(text);
   }
@@ -90,6 +93,9 @@ function exit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
-
+// Peter told me to skip this :)
+function help(){
+  console.log('exit, and type help you\'ll recieve all the possible commands :) ')
+}
 // The following line starts the application
 startApp("Hadi Abou Homein")
