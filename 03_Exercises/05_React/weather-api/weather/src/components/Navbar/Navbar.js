@@ -1,11 +1,11 @@
 import React from 'react'
 import './Navbar.css';
 import Search from '../search/search';
-function Navbar() {
+function Navbar({setCity, setFindweather}) {
   return (
     <div  className='Navbar'>
-        <Search />
-        <button>FIND WEATHER</button>
+        <Search setCity={setCity} setFindweather={setFindweather}/>
+        
     </div>
   )
 }
