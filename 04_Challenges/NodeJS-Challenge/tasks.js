@@ -40,6 +40,9 @@ function onDataReceived(text) {
   else if(text === 'hello\n'){
     hello();
   }
+  else if(text === 'tomato\n'){
+    tomato();
+  }
   else{
     unknownCommand(text);
   }
@@ -66,6 +69,9 @@ function unknownCommand(c){
 function hello(){
   console.log('hello!')
 }
+function tomato(){
+  console.log('tomato!')
+}
 
 
 /**
@@ -79,4 +85,4 @@ function quit(){
 }
 
 // The following line starts the application
-startApp("Jad Sarout")
+startApp("Hadi Abou Homein")
