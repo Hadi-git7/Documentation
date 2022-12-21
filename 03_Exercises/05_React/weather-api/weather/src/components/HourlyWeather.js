@@ -11,6 +11,7 @@ import fog from '../images/weather-icons/fog.svg'
 import rain from '../images/weather-icons/rain.svg'
 import storm from '../images/weather-icons/storm.svg'
 import unkown from '../images/weather-icons/unknown.svg'
+import { changeImage } from './ChangeImage'
 
 function HourlyWeather(props) {
   const [weather , setWeather] = useState([]);
@@ -37,7 +38,7 @@ function HourlyWeather(props) {
       return (
         <div className='card'>
         <p>{item.dt_txt.substring(10, 16)}</p>
-        <img src={snow} alt='mostly cloudy icon'/>
+        {changeImage(item.weather[0].main)}
         <p>{Math.floor(item.main.temp)}°C</p>
         </div>
       )

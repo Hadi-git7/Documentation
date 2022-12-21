@@ -11,7 +11,7 @@ import rain from '../../images/weather-icons/rain.svg'
 import storm from '../../images/weather-icons/storm.svg'
 import unkown from '../../images/weather-icons/unknown.svg'
 import { useEffect, useState } from 'react'
-
+import { changeImage } from '../ChangeImage'
 function CurrentWeather(props) {
 
   const [weather , setWeather] = useState()
@@ -33,7 +33,7 @@ function CurrentWeather(props) {
       (
         <div>
           <div className='mainImage'>
-            <img src={clear} alt='mostly cloudy icon'/>
+            {changeImage(weather.weather[0].main)}
           </div>
           <div className='imgDiscription'>
             <p>{weather.weather[0].description}</p>
