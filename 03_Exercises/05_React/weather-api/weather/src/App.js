@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       {console.log(city)}
-   <Navbar setCity={setCity} setFindweather={setFindweather}/>
+   <Navbar city={city} setCity={setCity} setFindweather={setFindweather}/>
    <Body city={city} findWeather={findWeather}/>
     </div>
   );
