@@ -55,6 +55,7 @@ function onDataReceived(text) {
 }
 
 
+
 /**
  * prints "unknown command"
  * This function is supposed to run when all other commands have failed
@@ -73,7 +74,7 @@ function unknownCommand(c){
  * @returns {void}
  */
 function hello(){
-  console.log('hello!')
+  console.log('hello!' )
 }
 function tomato(){
   console.log('tomato!')
@@ -93,9 +94,12 @@ function exit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
-// Peter told me to skip this :)
+
+const List = [help , quit , hello , tomato ,exit];
 function help(){
-  console.log('exit, and type help you\'ll recieve all the possible commands :) ')
+ List.forEach(element => console.log('-',element))
+ console.log('---------------')
 }
+
 // The following line starts the application
 startApp("Hadi Abou Homein")
