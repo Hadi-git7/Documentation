@@ -94,7 +94,7 @@ function exit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
-
+// This help function displays all the possible commands that could be written inside tasks.js
 const List = [help , quit , hello , tomato ,exit];
 function help(){
  List.forEach(element => console.log('-',element))
