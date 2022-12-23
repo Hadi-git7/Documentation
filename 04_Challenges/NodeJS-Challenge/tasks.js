@@ -35,6 +35,7 @@ function startApp(name){
  */
 
 const List = [help , hello, newHello , tomato,quit ,exit];
+
 function onDataReceived(text) {
   var text = text.trim();
   if (text === 'quit') {
@@ -59,6 +60,9 @@ function onDataReceived(text) {
   }
   else if (text.startsWith("add")) {
     addTask(text);
+  }
+  else if (text.startsWith("remove")) {
+    removeTask(text);
   }
   else{
     unknownCommand(text);
@@ -131,13 +135,31 @@ function list(){
 }
   function addTask(text) {
     if (text == "add") {
-    console.log('ERROR there is no tasks to add!')
+    console.log('ERROR name a task to be added!')
     } else {
     arg = text.replace("add ", "");
     tasks.push(arg);
     console.log(arg + ' has been added to list!')
     }
     console.log('--------------------')
+}
+  function removeTask(text){
+    if(text === 'remove'){
+      tasks.pop()
+      console.log('last task has been removed from list!')
+    }
+    else {
+      let arr = text.split(" ");
+      let index = parseInt(arr[1]);
+      if (index < 1 || index > tasks.length) {
+        console.log('this task number does not exist!');
+      }
+      else {
+        tasks.splice(index - 1, 1);
+        console.log('task ' + index + ' has been removed from list!')
+      }
+}
+console.log('--------------------')
 }
 // The following line starts the application
 startApp("Hadi Abou Homein")
