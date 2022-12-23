@@ -33,6 +33,8 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
+const tasks = ['task one','task two'];
+
 function onDataReceived(text) {
   var text = text.trim();
   if (text === 'quit') {
@@ -52,6 +54,8 @@ function onDataReceived(text) {
   }
   else if(text === 'help'){
     help();
+  }else if(text === 'list'){
+    list()
   }
   else{
     unknownCommand(text);
@@ -80,12 +84,15 @@ function unknownCommand(c){
  */
 function hello(){
   console.log('hello!' )
+  console.log('---------------')
 }
 function tomato(){
   console.log('tomato!')
+  console.log('---------------')
 }
 function newHello(text){
   text == 'hello' ? console.log('hello!') : console.log(text + '!')
+  console.log('---------------')
 }
 
 /**
@@ -102,11 +109,17 @@ function exit(){
   process.exit();
 }
 // This help function displays all the possible commands that could be written inside tasks.js
-const List = [help , quit , hello, newHello , tomato ,exit];
+const List = [help , hello, newHello , tomato,quit ,exit];
 function help(){
  List.forEach(element => console.log('-',element))
  console.log('---------------')
 }
-
+// list function
+function list(){
+  console.log(`Here are the tasks:`)
+  for (let i = 0; i < tasks.length; i++) {
+    console.log(`${i + 1}. ${tasks[i]}`);
+  }
+}
 // The following line starts the application
 startApp("Hadi Abou Homein")
