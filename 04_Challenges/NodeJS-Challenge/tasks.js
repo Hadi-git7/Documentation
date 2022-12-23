@@ -34,19 +34,23 @@ function startApp(name){
  * @returns {void}
  */
 function onDataReceived(text) {
-  if (text === 'quit\n') {
+  var text = text.trim();
+  if (text === 'quit') {
     quit();
   }
   else if(text === 'hello\n'){
     hello();
+  }  
+  else if(text.startsWith('hello')){
+   hello(text)
   }
-  else if(text === 'tomato\n'){
+  else if(text === 'tomato'){
     tomato();
   }
-  else if(text === 'exit\n'){
+  else if(text === 'exit'){
     exit();
   }
-  else if(text === 'help\n'){
+  else if(text === 'help'){
     help();
   }
   else{
@@ -79,7 +83,9 @@ function hello(){
 function tomato(){
   console.log('tomato!')
 }
-
+function hello(text){
+  text == 'hello' ? console.log('hello!') : console.log(text + '!')
+}
 
 /**
  * Exits the application
