@@ -34,8 +34,6 @@ function startApp(name){
  * @returns {void}
  */
 
-const List = [help , hello, newHello , tomato,quit ,exit];
-
 function onDataReceived(text) {
   var text = text.trim();
   if (text === 'quit') {
@@ -118,7 +116,7 @@ function exit(){
   process.exit();
 }
 // This help function displays all the possible commands that could be written inside tasks.js
-
+const List = [help , hello, newHello ,list, addTask, removeTask, tomato, quit ,exit];
 function help(){
  List.forEach(element => console.log('-',element))
  console.log('--------------------')
@@ -133,6 +131,7 @@ function list(){
   }
   console.log('--------------------')
 }
+// Add function
   function addTask(text) {
     if (text == "add") {
     console.log('ERROR name a task to be added!')
@@ -143,6 +142,7 @@ function list(){
     }
     console.log('--------------------')
 }
+// Remove function
   function removeTask(text){
     if(text === 'remove'){
       tasks.pop()
