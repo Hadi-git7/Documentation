@@ -33,8 +33,8 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
-const tasks = ['task one','task two'];
 
+const List = [help , hello, newHello , tomato,quit ,exit];
 function onDataReceived(text) {
   var text = text.trim();
   if (text === 'quit') {
@@ -57,6 +57,9 @@ function onDataReceived(text) {
   }else if(text === 'list'){
     list()
   }
+  else if (text.startsWith("add")) {
+    addTask(text);
+  }
   else{
     unknownCommand(text);
   }
@@ -74,6 +77,8 @@ function onDataReceived(text) {
  */
 function unknownCommand(c){
   console.log('unknown command: "'+c.trim()+'"')
+  console.log('--------------------')
+
 }
 
 
@@ -84,15 +89,15 @@ function unknownCommand(c){
  */
 function hello(){
   console.log('hello!' )
-  console.log('---------------')
+  console.log('--------------------')
 }
 function tomato(){
   console.log('tomato!')
-  console.log('---------------')
+  console.log('--------------------')
 }
 function newHello(text){
   text == 'hello' ? console.log('hello!') : console.log(text + '!')
-  console.log('---------------')
+  console.log('--------------------')
 }
 
 /**
@@ -109,17 +114,30 @@ function exit(){
   process.exit();
 }
 // This help function displays all the possible commands that could be written inside tasks.js
-const List = [help , hello, newHello , tomato,quit ,exit];
+
 function help(){
  List.forEach(element => console.log('-',element))
- console.log('---------------')
+ console.log('--------------------')
 }
 // list function
+const tasks = [];
+
 function list(){
   console.log(`Here are the tasks:`)
   for (let i = 0; i < tasks.length; i++) {
     console.log(`${i + 1}. ${tasks[i]}`);
   }
+  console.log('--------------------')
+}
+  function addTask(text) {
+    if (text == "add") {
+    console.log('ERROR there is no tasks to add!')
+    } else {
+    arg = text.replace("add ", "");
+    tasks.push(arg);
+    console.log(arg + ' has been added to list!')
+    }
+    console.log('--------------------')
 }
 // The following line starts the application
 startApp("Hadi Abou Homein")
