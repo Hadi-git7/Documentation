@@ -42,7 +42,7 @@ function onDataReceived(text) {
     hello();
   }  
   else if(text.startsWith('hello')){
-   hello(text)
+   newHello(text)
   }
   else if(text === 'tomato'){
     tomato();
@@ -56,7 +56,7 @@ function onDataReceived(text) {
   else{
     unknownCommand(text);
   }
-  
+
 }
 
 
@@ -84,7 +84,7 @@ function hello(){
 function tomato(){
   console.log('tomato!')
 }
-function hello(text){
+function newHello(text){
   text == 'hello' ? console.log('hello!') : console.log(text + '!')
 }
 
@@ -102,7 +102,7 @@ function exit(){
   process.exit();
 }
 // This help function displays all the possible commands that could be written inside tasks.js
-const List = [help , quit , hello , tomato ,exit];
+const List = [help , quit , hello, newHello , tomato ,exit];
 function help(){
  List.forEach(element => console.log('-',element))
  console.log('---------------')
