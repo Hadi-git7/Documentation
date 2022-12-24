@@ -65,6 +65,12 @@ function onDataReceived(text) {
   else if (text.startsWith("edit")) {
     edit(text);
   }
+  else if (text.startsWith("check")) {
+    check(text);
+  }
+  else if (text.startsWith("uncheck")) {
+    uncheck(text);
+  }
   else{
     unknownCommand(text);
   }
@@ -182,6 +188,38 @@ console.log('--------------------')
       }
     console.log('--------------------')
   }
+  // check function
 
+  function check(text) {
+    if (text == "check") {
+    console.log('ERROR choose a task number to check');
+    } else {
+    let index = parseInt(text.replace("check ", ""));
+    if (index < 1 || index > tasks.length) {
+    console.log(`ERROR no task ${index}`);
+    }  else if(text.match(/\d+/g)) {
+    tasks[index - 1].checked = true;
+    let access = (text.match(/\d+/g) - 1) ;
+    tasks[access] = `[✓] `;
+    console.log(`task ${index} checked!`);
+    }
+    list();
+    }
+    }
+    // uncheck function
+    function uncheck(text) {
+      if (text === "uncheck") {
+        console.log("ERROR choose a task to uncheck");
+      }  else {
+        let index = parseInt(text.replace("uncheck ", ""));
+        if (index < 1 || index > tasks.length) {
+        console.log(`ERROR no task ${index}`);
+        } else if (text.match(/\d+/g)) {
+          let access = (text.match(/\d+/g) - 1);
+          tasks[access] = "[ ]";
+          list();
+        }
+    }
+  }
 // The following line starts the application
 startApp("Hadi Abou Homein")
