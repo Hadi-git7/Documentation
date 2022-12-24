@@ -62,6 +62,9 @@ function onDataReceived(text) {
   else if (text.startsWith("remove")) {
     removeTask(text);
   }
+  else if (text.startsWith("edit")) {
+    edit(text);
+  }
   else{
     unknownCommand(text);
   }
@@ -138,7 +141,7 @@ function list(){
     } else {
     arg = text.replace("add ", "");
     tasks.push(arg);
-    console.log(arg + ' has been added to list!')
+    console.log('Task ' +arg + ' has been added to list!')
     }
     console.log('--------------------')
 }
@@ -161,6 +164,24 @@ function list(){
 }
 console.log('--------------------')
 }
+// Edit function
+  function edit(text){
+    if(text === 'edit'){
+      console.log('ERROR choose a task to edit!')
+    }
+    else {
+      let arr = text.split(" ")
+      let index = parseInt(arr[1]);
+      if (isNaN(index)) {
+      console.log('Please specify a task number to edit.');
+      } else {
+      let str = String(arr.splice(2, arr.length - 2)).replace(/,/, " ");
+      tasks[index - 1] = str;
+      console.log("Task " + index + " has been changed to " + str + ".");
+      }
+      }
+    console.log('--------------------')
+  }
 
 // The following line starts the application
 startApp("Hadi Abou Homein")
