@@ -125,7 +125,7 @@ function exit(){
   process.exit();
 }
 // This help function displays all the possible commands that could be written inside tasks.js
-const List = [help , hello, newHello ,list, addTask, removeTask, tomato, quit ,exit];
+const List = [help , hello, newHello ,list, addTask, removeTask, check,uncheck,tomato, quit ,exit];
 function help(){
  List.forEach(element => console.log('-',element))
  console.log('--------------------')
