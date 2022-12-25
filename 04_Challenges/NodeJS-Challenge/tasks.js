@@ -9,6 +9,7 @@
  * @param  {string} name the name of the app
  * @returns {void}
  */
+
 function startApp(name){
   process.stdin.resume();
   process.stdin.setEncoding('utf8');
@@ -200,8 +201,8 @@ console.log('--------------------')
     }  else if(text.match(/\d+/g)) {
     tasks[index - 1].checked = true;
     let access = (text.match(/\d+/g) - 1) ;
-    tasks[access] = `[✓] `;
-    console.log(`task ${index} checked!`);
+    tasks[access] = `${tasks[index - 1]} [✓] `;
+    console.log(`task ${index} marked as checked!`);
     }
     list();
     }
@@ -216,10 +217,12 @@ console.log('--------------------')
         console.log(`ERROR no task ${index}`);
         } else if (text.match(/\d+/g)) {
           let access = (text.match(/\d+/g) - 1);
-          tasks[access] = "[ ]";
+          tasks[access] = `${tasks[index - 1].split(" ").slice(0,1)} [ ]`;
           list();
         }
     }
   }
+
+ 
 // The following line starts the application
 startApp("Hadi Abou Homein")
