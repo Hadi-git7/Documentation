@@ -79,7 +79,6 @@ function onDataReceived(text) {
 }
 
 
-
 /**
  * prints "unknown command"
  * This function is supposed to run when all other commands have failed
@@ -118,6 +117,14 @@ function newHello(text){
  * @returns {void}
  */
 function quit(){
+  let fs = require("fs");
+  let data = JSON.stringify(objList);
+  try {
+    fs.writeFileSync(savefile, data);
+    console.log(`Saving changes...`);
+  } catch (error) {
+    console.error(error);
+  }
   console.log('Quitting now, goodbye!')
   process.exit();
 }
@@ -149,8 +156,9 @@ function list(){
     arg = text.replace("add ", "");
     tasks.push(arg);
     console.log('Task ' +arg + ' has been added to list!')
-    }
-    console.log('--------------------')
+    list()
+  }
+   
 }
 // Remove function
   function removeTask(text){
@@ -169,7 +177,7 @@ function list(){
         console.log('task ' + index + ' has been removed from list!')
       }
 }
-console.log('--------------------')
+list()
 }
 // Edit function
   function edit(text){
@@ -181,48 +189,69 @@ console.log('--------------------')
       let index = parseInt(arr[1]);
       if (isNaN(index)) {
       console.log('Please specify a task number to edit.');
+      console.log('--------------------')
       } else {
       let str = String(arr.splice(2, arr.length - 2)).replace(/,/, " ");
       tasks[index - 1] = str;
       console.log("Task " + index + " has been changed to " + str + ".");
       }
+      list();
       }
-    console.log('--------------------')
+   
   }
+
   // check function
 
   function check(text) {
-    if (text == "check") {
-    console.log('ERROR choose a task number to check');
+    const index = parseInt(text.substring(6)) - 1;
+    if (isNaN(index) || index < 0 || index >= tasks.length) {
+      console.log("Please enter a valid task number.");
     } else {
-    let index = parseInt(text.replace("check ", ""));
-    if (index < 1 || index > tasks.length) {
-    console.log(`ERROR no task ${index}`);
-    }  else if(text.match(/\d+/g)) {
-    tasks[index - 1].checked = true;
-    let access = (text.match(/\d+/g) - 1) ;
-    tasks[access] = `${tasks[index - 1]} [✓] `;
-    console.log(`task ${index} marked as checked!`);
+      tasks[index] = `[✓] ${tasks[index]}`;
+      console.log(`Task ${index + 1} checked!`);
+      list()
     }
-    list();
-    }
-    }
-    // uncheck function
-    function uncheck(text) {
-      if (text === "uncheck") {
-        console.log("ERROR choose a task to uncheck");
-      }  else {
-        let index = parseInt(text.replace("uncheck ", ""));
-        if (index < 1 || index > tasks.length) {
-        console.log(`ERROR no task ${index}`);
-        } else if (text.match(/\d+/g)) {
-          let access = (text.match(/\d+/g) - 1);
-          tasks[access] = `${tasks[index - 1].split(" ").slice(0,1)} [ ]`;
-          list();
-        }
-    }
+  
   }
 
+  // uncheck function
+
+  function uncheck(text) {
+    const index = parseInt(text.substring(8)) - 1;
+    if (isNaN(index) || index < 0 || index >= tasks.length) {
+      console.log("Please enter a valid task number.");
+    } else {
+      if (tasks[index].startsWith("[✓]")) {
+        tasks[index] = tasks[index].substring(4, tasks[index].length);
+        console.log(`Task ${index + 1} unchecked!`);
+      } 
+      list()
+    }
+   
+  }
+// savefile function
+let savefile;
+if (process.argv[2] == null) {
+  savefile = "database.json";
+} else {
+  savefile = process.argv[2];
+}
+
+var list1;
+const fs = require("fs");
+try {
+  let data = fs.readFileSync(savefile);
+  var objList = JSON.parse(data);
+}
+catch (e) {
+  console.log(`this file is not present, we will create it!`)
+}
+if (objList !== undefined) {
+  list1 = objList.list1;
+} else {
+  objList = { "list1": tasks }
+  list1 = objList.list1;
+}
  
 // The following line starts the application
 startApp("Hadi Abou Homein")
